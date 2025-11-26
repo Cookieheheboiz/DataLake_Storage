@@ -1,0 +1,15 @@
+# minio-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: minio-service
+  namespace: data-lake
+spec:
+  selector:
+    app: minio
+  ports:
+    - name: api
+      port: 9000
+      targetPort: 9000
+      protocol: TCP
+  type: NodePort
